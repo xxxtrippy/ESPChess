@@ -1,0 +1,57 @@
+
+================ DEMO 1: scripted human game (Scholar's mate) ================
+  played e2e4
+  played e7e5
+  played f1c4
+  played b8c6
+  played d1h5
+  played g8f6
+  played h5f7
+  8 r . b q k b . r 
+  7 p p p p . Q p p 
+  6 . . n . . n . . 
+  5 . . . . p . . . 
+  4 . . B . P . . . 
+  3 . . . . . . . . 
+  2 P P P P . P P P 
+  1 R N B . K . N R 
+    a b c d e f g h    (black to move)
+  RESULT: 1-0 (White wins)  (checkmate=1)
+
+================ DEMO: AI vs AI self-play [Standard, level 4] ================
+  8 . Q . . . . . . 
+  7 . . . . . R . . 
+  6 k . . . . . R . 
+  5 p . . B . . . . 
+  4 P . . . . . . . 
+  3 . . . . . . . P 
+  2 . . . . . P P . 
+  1 . . . . . . K . 
+    a b c d e f g h    (black to move)
+  plies=101  RESULT: 1-0 (White wins)
+
+================ DEMO: AI vs AI self-play [King of the Hill, level 4] ================
+  8 r . . . . . . . 
+  7 p . . . k p . . 
+  6 . P . . b . . . 
+  5 P . . . . . . p 
+  4 . . . K P . p . 
+  3 . . . . P . . . 
+  2 . . P . B P P R 
+  1 . . . R . . . . 
+    a b c d e f g h    (black to move)
+  plies=55  RESULT: 1-0 (White wins)
+
+================ DEMO: AI vs AI self-play [Horde, level 3] ================
+  8 . Q b q . . . r 
+  7 . . p p b p p . 
+  6 . . . . . k . . 
+  5 . P P P . . P P 
+  4 P P . . P P . P 
+  3 P P P P . . P . 
+  2 P P P P P . P P 
+  1 P P P P P P P P 
+    a b c d e f g h    (black to move)
+  plies=27  RESULT: 1-0 (White wins)
+
+All demos completed.

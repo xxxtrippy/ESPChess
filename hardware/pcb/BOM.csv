@@ -1,0 +1,20 @@
+Board,Ref,Qty,Value,Package,Description,Notes
+PLATE,SW1-SW81,81,Cherry MX,MX plate/PCB,Mechanical key switch,Snap into the KP Republic plate; 2 pins solder to PCB
+PLATE,D1-D81,81,1N4148,DO-35 axial,Matrix anti-ghost diode,7.62mm (300mil) pad pitch
+PLATE,LED1-LED81,81,WS2811 5mm,5mm 4-lead THT,Addressable RGB LED (integrated WS2811),"e.g. Pololu #2535; VERIFY 4-pin pinout vs footprint"
+PLATE,J1,1,2x13 header,2.54mm,Ribbon to control board,26-way; matches J2 pin order
+PLATE,H1-H4,4,M3,3.2mm hole,Mounting holes,M3 standoffs to the acrylic plate
+CONTROL,J2,1,2x13 header,2.54mm,Ribbon to plate board,26-way; matches J1
+CONTROL,J3,1,2x11 header,2.54mm,ESP32-S3 breakout,Flylead to the dev board; pinout configurable
+CONTROL,U1,1,74AHCT125,DIP-14,3.3V->5V data level shifter,Use a DIP-14 socket
+CONTROL,R1,1,470 ohm,Axial 1/4W,Series data-line resistor,DATA_SHIFTED -> first LED DIN
+CONTROL,C1,1,1000uF,Radial 5mm,Bulk cap at 5V input,16V rating or higher
+CONTROL,J4,1,2-pin,5.08mm,External 5V input,Screw terminal or header; common GND with ESP32
+CONTROL,H1-H4,4,M3,3.2mm hole,Mounting holes,
+CABLE,-,1,26-way IDC,2.54mm,Ribbon cable + 2x IDC sockets,Joins J1 and J2
+OPTIONAL,C(opt),81,100nF,Radial 2.54mm,Per-LED decoupling,Not placed; add across each LED 5V/GND only if you see data glitches
+ENCLOSURE,top_plate,1,3D print,182x182x3mm + 3.5mm corner legs,Switch plate - 81 stepped MX cutouts; print web-side up
+ENCLOSURE,bottom_plate,1,3D print,182x182x3mm flat,Flat base - 4 M3 holes + cable slot
+ENCLOSURE,standoff,4,M3 6mm,Female-female hex,Between PCB and bottom plate
+ENCLOSURE,screw_top,4,M3x12,-,Top plate+leg+PCB into standoff top
+ENCLOSURE,screw_bot,4,M3x6,-,Bottom plate into standoff bottom

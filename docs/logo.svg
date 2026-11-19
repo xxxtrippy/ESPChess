@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="320" viewBox="0 0 1280 320" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1120"/>
+      <stop offset="1" stop-color="#101d34"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2fe6b0"/>
+      <stop offset="1" stop-color="#2f9bff"/>
+    </linearGradient>
+    <linearGradient id="tile" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16233c"/>
+      <stop offset="1" stop-color="#0d1526"/>
+    </linearGradient>
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="1280" height="320" rx="28" fill="url(#bg)"/>
+  <rect x="2.5" y="2.5" width="1275" height="315" rx="26" fill="none" stroke="#223250" stroke-width="2"/>
+  <!-- top accent bar -->
+  <rect x="28" y="26" width="1224" height="4" rx="2" fill="url(#accent)" opacity="0.85"/>
+
+  <!-- emblem tile: mini LED chessboard + king -->
+  <g transform="translate(70,74)">
+    <rect x="0" y="0" width="172" height="172" rx="22" fill="url(#tile)" stroke="#2a3c5e" stroke-width="2"/>
+    <!-- 4x4 board -->
+    <g transform="translate(14,14)">
+      <!-- squares -->
+      <g>
+        <rect x="0"   y="0"   width="36" height="36" fill="#1d2b47"/>
+        <rect x="36"  y="0"   width="36" height="36" fill="#263a5e"/>
+        <rect x="72"  y="0"   width="36" height="36" fill="#1d2b47"/>
+        <rect x="108" y="0"   width="36" height="36" fill="#263a5e"/>
+        <rect x="0"   y="36"  width="36" height="36" fill="#263a5e"/>
+        <rect x="36"  y="36"  width="36" height="36" fill="#1d2b47"/>
+        <rect x="72"  y="36"  width="36" height="36" fill="#263a5e"/>
+        <rect x="108" y="36"  width="36" height="36" fill="#1d2b47"/>
+        <rect x="0"   y="72"  width="36" height="36" fill="#1d2b47"/>
+        <rect x="36"  y="72"  width="36" height="36" fill="#263a5e"/>
+        <rect x="72"  y="72"  width="36" height="36" fill="#1d2b47"/>
+        <rect x="108" y="72"  width="36" height="36" fill="#263a5e"/>
+        <rect x="0"   y="108" width="36" height="36" fill="#263a5e"/>
+        <rect x="36"  y="108" width="36" height="36" fill="#1d2b47"/>
+        <rect x="72"  y="108" width="36" height="36" fill="#263a5e"/>
+        <rect x="108" y="108" width="36" height="36" fill="#1d2b47"/>
+      </g>
+      <!-- addressable-LED glow dots (handoff piece colours) -->
+      <g filter="url(#glow)">
+        <circle cx="18"  cy="18"  r="6" fill="#00ff00"/>
+        <circle cx="126" cy="18"  r="6" fill="#a000ff"/>
+        <circle cx="90"  cy="54"  r="6" fill="#ff0000"/>
+        <circle cx="18"  cy="126" r="6" fill="#ff8c00"/>
+        <circle cx="126" cy="126" r="6" fill="#0050ff"/>
+        <circle cx="54"  cy="90"  r="6" fill="#ffff00"/>
+      </g>
+    </g>
+    <!-- king glyph -->
+    <text x="86" y="140" text-anchor="middle" font-size="150" fill="#f4c653"
+          filter="url(#soft)">&#9818;</text>
+  </g>
+
+  <!-- wordmark -->
+  <text x="300" y="168" font-size="104" font-weight="bold" letter-spacing="1">
+    <tspan fill="url(#accent)">ESP</tspan><tspan fill="#f2f6fc">Chess</tspan>
+  </text>
+  <!-- subtitle -->
+  <text x="304" y="212" font-size="27" fill="#93a6c4" letter-spacing="0.5">
+    9&#215;9 electronic chessboard &#183; ESP32-S3 &#183; 81 switches + 81 RGB LEDs
+  </text>
+  <!-- feature chips -->
+  <g font-size="19" fill="#cdd9ea">
+    <g transform="translate(304,246)">
+      <rect x="0" y="0" width="150" height="34" rx="17" fill="#13203a" stroke="#2a3c5e"/>
+      <text x="75" y="23" text-anchor="middle">8 game modes</text>
+    </g>
+    <g transform="translate(466,246)">
+      <rect x="0" y="0" width="168" height="34" rx="17" fill="#13203a" stroke="#2a3c5e"/>
+      <text x="84" y="23" text-anchor="middle">10 AI levels</text>
+    </g>
+    <g transform="translate(646,246)">
+      <rect x="0" y="0" width="196" height="34" rx="17" fill="#13203a" stroke="#2a3c5e"/>
+      <text x="98" y="23" text-anchor="middle">perft-verified engine</text>
+    </g>
+  </g>
+
+  <!-- circuit trace accent, right -->
+  <g stroke="#2fe6b0" stroke-width="2" fill="none" opacity="0.55">
+    <path d="M1150 70 h60 v40 h-30 v40 h40"/>
+    <path d="M1180 190 v40 h-50 v30"/>
+  </g>
+  <g fill="#2fe6b0" opacity="0.8">
+    <circle cx="1210" cy="110" r="4"/><circle cx="1170" cy="260" r="4"/>
+    <circle cx="1220" cy="190" r="4"/>
+  </g>
+</svg>

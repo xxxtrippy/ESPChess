@@ -1,0 +1,31 @@
+# PlatformIO / build
+.pio/
+.pioenvs/
+.piolibdeps/
+*.o
+*.elf
+*.bin
+/tmp/
+
+# Host test binaries
+firmware/test/*.out
+chessboard_tests
+chessboard_perft
+
+# KiCad backups / caches
+*-bak
+*.kicad_pcb-bak
+*.kicad_sch-bak
+*.kicad_prl
+fp-info-cache
+sym-lib-table-bak
+_autosave-*
+*.lck
+
+# Python
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

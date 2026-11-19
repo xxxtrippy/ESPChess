@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" font-family="DejaVu Sans, Arial, sans-serif">
+  <defs>
+    <linearGradient id="t" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#16233c"/><stop offset="1" stop-color="#0a1120"/>
+    </linearGradient>
+    <filter id="g" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="256" height="256" rx="44" fill="url(#t)"/>
+  <rect x="2" y="2" width="252" height="252" rx="42" fill="none" stroke="#2a3c5e" stroke-width="3"/>
+  <g transform="translate(40,40)">
+    <g>
+      <rect x="0" y="0" width="44" height="44" fill="#1d2b47"/><rect x="44" y="0" width="44" height="44" fill="#263a5e"/>
+      <rect x="88" y="0" width="44" height="44" fill="#1d2b47"/><rect x="132" y="0" width="44" height="44" fill="#263a5e"/>
+      <rect x="0" y="44" width="44" height="44" fill="#263a5e"/><rect x="44" y="44" width="44" height="44" fill="#1d2b47"/>
+      <rect x="88" y="44" width="44" height="44" fill="#263a5e"/><rect x="132" y="44" width="44" height="44" fill="#1d2b47"/>
+      <rect x="0" y="88" width="44" height="44" fill="#1d2b47"/><rect x="44" y="88" width="44" height="44" fill="#263a5e"/>
+      <rect x="88" y="88" width="44" height="44" fill="#1d2b47"/><rect x="132" y="88" width="44" height="44" fill="#263a5e"/>
+      <rect x="0" y="132" width="44" height="44" fill="#263a5e"/><rect x="44" y="132" width="44" height="44" fill="#1d2b47"/>
+      <rect x="88" y="132" width="44" height="44" fill="#263a5e"/><rect x="132" y="132" width="44" height="44" fill="#1d2b47"/>
+    </g>
+    <g filter="url(#g)">
+      <circle cx="22" cy="22" r="7" fill="#00ff00"/><circle cx="154" cy="22" r="7" fill="#a000ff"/>
+      <circle cx="22" cy="154" r="7" fill="#ff8c00"/><circle cx="154" cy="154" r="7" fill="#0050ff"/>
+      <circle cx="110" cy="66" r="7" fill="#ff0000"/><circle cx="66" cy="110" r="7" fill="#ffff00"/>
+    </g>
+  </g>
+  <text x="128" y="182" text-anchor="middle" font-size="184" fill="#f4c653">&#9818;</text>
+</svg>

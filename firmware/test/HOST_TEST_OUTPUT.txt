@@ -1,0 +1,45 @@
+== building host test suite ==
+== running ==
+==== Chessboard firmware test suite ====
+[perft]
+[mapping]
+[clock]
+[rules]
+[variants]
+[ai]
+[play: fool's mate via controller]
+[play: human (random) vs AI to completion]
+    -> result=2 after 92 plies
+[play: AI self-play (standard + KotH)]
+    -> Standard ended result=2 after 86 plies
+    -> King of the Hill ended result=2 after 66 plies
+[play: timed game can flag]
+[championship ladder]
+[menu: all 24 configurations]
+[championship session (human vs 10 AIs)]
+
+==== RESULT: 71 passed, 0 failed ====
+
+== full perft (startpos depth 5, kiwipete depth 4) ==
+perft(1) rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1     got=20 exp=20 OK
+perft(2) rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1     got=400 exp=400 OK
+perft(3) rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1     got=8902 exp=8902 OK
+perft(4) rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1     got=197281 exp=197281 OK
+perft(5) rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1     got=4865609 exp=4865609 OK
+perft(1) r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 got=48 exp=48 OK
+perft(2) r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 got=2039 exp=2039 OK
+perft(3) r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 got=97862 exp=97862 OK
+perft(4) r3k2r/p1ppqpb1/bn2pnp1/3PN3/1p2P3/2N2Q1p/PPPBBPPP/R3K2R w KQkq - 0 1 got=4085603 exp=4085603 OK
+perft(1) 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1                    got=14 exp=14 OK
+perft(2) 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1                    got=191 exp=191 OK
+perft(3) 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1                    got=2812 exp=2812 OK
+perft(4) 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1                    got=43238 exp=43238 OK
+perft(5) 8/2p5/3p4/KP5r/1R3p1k/8/4P1P1/8 w - - 0 1                    got=674624 exp=674624 OK
+perft(1) r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1 got=6 exp=6 OK
+perft(2) r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1 got=264 exp=264 OK
+perft(3) r3k2r/Pppp1ppp/1b3nbN/nP6/BBP1P3/q4N2/Pp1P2PP/R2Q1RK1 w kq - 0 1 got=9467 exp=9467 OK
+perft(1) rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8    got=44 exp=44 OK
+perft(2) rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8    got=1486 exp=1486 OK
+perft(3) rnbq1k1r/pp1Pbppp/2p5/8/2B5/8/PPP1NnPP/RNBQK2R w KQ - 1 8    got=62379 exp=62379 OK
+
+PERFT: 20/20 passed
