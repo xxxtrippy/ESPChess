@@ -20,7 +20,7 @@ PCB      = 182.0
 PITCH    = 19.05
 N        = 9
 C0_PCB   = 14.8              # first switch centre in PCB space
-WALL     = 3.0
+WALL     = 5.0
 FLOOR    = 3.0
 CLEAR    = 0.5              # per-side clearance around PCB inside the tray
 INNER    = PCB + 2*CLEAR    # 183
@@ -102,7 +102,12 @@ def build_base():
     cuts=[]
     for x,y in HOLES:
         h=cylinder(radius=INSERT_D/2,height=INSERT_H+0.2); h.apply_translation([x,y,POST_TOP-INSERT_H/2+0.1]); cuts.append(h)
-    slot=box(extents=[24,WALL+2,10]); slot.apply_translation([OUTER/2,WALL/2,FLOOR+5+0.0]); cuts.append(slot)
+    # 12mm round port through the front wall, centred side-to-side and top-to-bottom
+    import trimesh.transformations as tf
+    port=cylinder(radius=6.0, height=WALL+4)          # 12mm dia, pierces the 5mm wall
+    port.apply_transform(tf.rotation_matrix(np.pi/2,[1,0,0]))   # z-axis -> y-axis
+    port.apply_translation([OUTER/2, WALL/2, WALL_TOP/2])
+    cuts.append(port)
     base=trimesh.boolean.difference([base]+cuts)
     return base
 

@@ -22,11 +22,12 @@ TOP PLATE (4 mm, 81 stepped MX cutouts, counterbored screw holes) — snap-in sw
    └─ 3.5 mm switch gap   (printed corner legs set it)
 PCB (soldered to switches)
    └─ 12 mm battery bay    (open floor between the corner posts)
-BASE (one piece: 3 mm floor + walls + 4 corner posts w/ M3 inserts)
+BASE (one piece: 3 mm floor + 5 mm walls + 4 corner posts w/ M3 inserts)
 ```
 
-Outer footprint 189 × 189 mm, assembled height ≈ 24 mm. A USB / power slot in one
-wall opens into the battery bay.
+Outer footprint 193 × 193 mm, assembled height ≈ 24 mm. A **Ø12 mm port**,
+centred side-to-side and top-to-bottom on one wall, opens into the battery bay
+(USB / power / switch).
 
 <table>
 <tr>
