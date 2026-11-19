@@ -28,8 +28,18 @@ BASE (one piece: 3 mm floor + walls + 4 corner posts w/ M3 inserts)
 Outer footprint 189 × 189 mm, assembled height ≈ 24 mm. A USB / power slot in one
 wall opens into the battery bay.
 
+<table>
+<tr>
+<td align="center"><img src="enclosure/render_base.png" width="100%"/><br/><sub>Base</sub></td>
+<td align="center"><img src="enclosure/render_topplate.png" width="100%"/><br/><sub>Top plate</sub></td>
+</tr>
+<tr>
+<td align="center"><img src="enclosure/render_assembled.png" width="100%"/><br/><sub>Assembled</sub></td>
+<td align="center"><img src="enclosure/render_exploded.png" width="100%"/><br/><sub>Exploded</sub></td>
+</tr>
+</table>
+
 ![cross-section](enclosure/case_section.png)
-![base](enclosure/case_base_top.png)
 
 **Hardware:** 4× M3 heat-set inserts (≈4.0 mm pilot), 4× M3×14–16 socket-head
 screws. Print the top plate **web-side up** (the switch cutouts' 0.8 mm ledge

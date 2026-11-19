@@ -71,7 +71,7 @@ provided: a **custom PCB** (plate board + small control board) or **hand-wiring*
 the matrix and LED chain directly.
 
 <div align="center">
-<img src="hardware/enclosure/case_section.png" width="80%" alt="Enclosure cross-section"/>
+<img src="hardware/enclosure/render_exploded.png" width="78%" alt="Enclosure exploded view"/>
 </div>
 
 **Per square:** 1× MX switch, 1× 1N4148 matrix diode, 1× 5 mm WS2811 addressable
