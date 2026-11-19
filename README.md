@@ -14,6 +14,12 @@
 addressable RGB LED per square, and an ESP32-S3 running a full chess engine with
 variants, clocks, selectable-strength AI and a championship ladder.
 
+<br/>
+
+<img src="docs/renders/beauty_hero.png" width="92%" alt="ESPChess — translucent keycaps lit by piece colour on a black case"/>
+
+<sub>Translucent keycaps lit by the piece-colour code · black case · USB-C port</sub>
+
 </div>
 
 ---
