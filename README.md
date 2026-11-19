@@ -71,7 +71,7 @@ provided: a **custom PCB** (plate board + small control board) or **hand-wiring*
 the matrix and LED chain directly.
 
 <div align="center">
-<img src="hardware/enclosure/sandwich_section.png" width="80%" alt="Plate / PCB / plate sandwich"/>
+<img src="hardware/enclosure/case_section.png" width="80%" alt="Enclosure cross-section"/>
 </div>
 
 **Per square:** 1× MX switch, 1× 1N4148 matrix diode, 1× 5 mm WS2811 addressable
@@ -87,9 +87,10 @@ in a serpentine order that matches the firmware's `ledIndex()`.
 
 - **PCB** — [`hardware/pcb/`](hardware/pcb) · open the KiCad projects; see the
   [PCB README](hardware/pcb/README.md) for the matrix map, ribbon pinout and BOM.
-- **Enclosure** — [`hardware/enclosure/`](hardware/enclosure) · print `top_plate.stl`
-  (switch plate, web-side up) and `bottom_plate.stl`; M3 standoffs between PCB and
-  bottom plate.
+- **Enclosure** — [`hardware/enclosure/`](hardware/enclosure) · a two-part printed
+  case: switches snap into `top_plate.stl`, the PCB solders to them, and the unit
+  screws into `base_enclosure.stl` (one-piece floor + walls + corner posts with M3
+  heat-set inserts and a **12 mm battery bay** under the PCB).
 
 > ⚠️ **Verify before building:** the GPIO map in
 > [`firmware/include/config.h`](firmware/include/config.h) and the addressable-LED
