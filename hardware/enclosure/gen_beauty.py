@@ -10,9 +10,16 @@ from PIL import Image, ImageFilter
 HERE=os.path.dirname(__file__); PROJ=os.path.join(HERE,"..","project"); OUT=os.path.join(HERE,"..")
 PITCH=19.05; C0=14.8; N=9
 
-# piece colours (handoff code)
+# piece colours (handoff code) -> the LED under each square
 PC={'P':(0,255,0),'N':(160,0,255),'R':(255,140,0),'B':(0,80,255),'Q':(255,0,0),'K':(255,255,0)}
 BACK=['R','N','B','Q','K','B','N','R']
+
+# keycap colour map from the user's image: red M, black top row, white left
+# column, black/white chessboard in the 8x8 area.
+CAP_GRID=["RBBBBBBBB","WWBWBWBWB","WBWBWBWBW","WWBWBWBWB","WBWBWBWBW",
+          "WWBWBWBWB","WBWBWBWBW","WWBWBWBWB","WBWBWBWBW"]
+CAPRGB={'R':(225,25,25),'W':(238,238,244),'B':(16,16,20)}
+TRANSPARENCY=0.65   # fraction of the LED that shines through the keycap
 
 LIGHT=np.array([0.35,-0.5,0.9]); LIGHT/=np.linalg.norm(LIGHT)
 def shade(mesh,rgb,emissive):
@@ -38,19 +45,25 @@ def cap_mesh(xc,yc):
     hi=trimesh.creation.box(extents=[16,16,4.5]); hi.apply_translation([xc,yc,PLATE_TOP+3.5+2.25])
     return lo,hi
 
-def cell_color(r,c):
-    # returns (rgb, emissive) for physical (row r, col c).
-    # Beauty render shows both sides at full colour to showcase the code
-    # (in-game the waiting side renders at 50%).
+def led_color(r,c):
+    # the RGB LED under each square (starting position, both sides full)
     if 1<=r<=8 and 1<=c<=8:
         file=c-1
-        if r in (8,1): return PC[BACK[file]],True        # back ranks
-        if r in (7,2): return PC['P'],True               # pawn ranks
-        return (52,58,72),False                          # empty square (smoky translucent)
-    if (r,c)==(8,0): return (0,210,0),True               # White CLK (active)
-    if (r,c)==(0,8): return (0,70,0),True                # Black CLK (idle)
-    if (r,c)==(0,0): return (90,90,104),True             # M button faint
-    return (40,45,56),False                              # eval segments / unlit
+        if r in (8,1): return PC[BACK[file]]
+        if r in (7,2): return PC['P']
+        return (0,0,0)                 # empty square -> LED off
+    if (r,c)==(8,0): return (0,230,0)  # White CLK active
+    if (r,c)==(0,0): return (255,30,30) # M lit red
+    return (0,0,0)
+
+def cell_color(r,c):
+    # translucent keycap (CAP colour) with the LED shining through at 65%.
+    # visible = 35% keycap tint + 65% LED.
+    cap=np.array(CAPRGB[CAP_GRID[r][c]],float)
+    led=np.array(led_color(r,c),float)
+    vis=(1-TRANSPARENCY)*cap + TRANSPARENCY*led
+    emissive = led.max()>0
+    return tuple(vis), emissive
 
 def render(out, elev, azim, title, w=12, h=10):
     fig=plt.figure(figsize=(w,h),dpi=170); fig.patch.set_facecolor("#05070c")
